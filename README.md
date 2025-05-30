@@ -1,1 +1,326 @@
-# venta-y-control-website
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Soluciones de punto de venta y control de inventario para negocios en México.">
+  <meta name="keywords" content="punto de venta, sistemas POS, control de inventario, venta y control, México">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="Venta y Control">
+  <meta property="og:title" content="Venta y Control - Puntos de Venta y Control de Inventario">
+  <meta property="og:description" content="Kits de punto de venta con gestión de inventario para tiendas y restaurantes.">
+  <meta property="og:image" content="TU_URL_OG_IMAGE.jpg">
+  <meta property="og:url" content="https://tudominio.com">
+  <title>Venta y Control - Puntos de Venta y Control de Inventario</title>
+  <link rel="icon" href="TU_FAVICON_URL" type="image/png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root { --primary:#1A3C6D; --accent:#FF3D00; --banner:#FF0000; --background:#FFF; --light-bg:#F5F6FA; --text:#1A3C6D; --shadow:rgba(26,60,109,.1); }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Nunito Sans',sans-serif; color:var(--text); background:var(--background); line-height:1.6; padding-top:35px; }
+    .section { padding:2rem 1rem; max-width:1200px; margin:0 auto; text-align:center; }
+    .section--light { background-color:var(--light-bg); }
+    .section--highlight { background-color:rgba(26,60,109,.05); border:1px solid var(--shadow); border-radius:8px; }
+    .section__title { font-size:2rem; color:var(--primary); margin-bottom:1.5rem; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:1.5rem; }
+    .box { background-color:rgba(26,60,109,.05); padding:1.5rem; border-radius:8px; box-shadow:0 4px 12px var(--shadow); transition:transform .3s ease,box-shadow .3s ease; }
+    .box:hover { transform:scale(1.03); box-shadow:0 6px 16px var(--shadow); }
+    .box i { font-size:2rem; color:var(--accent); margin-bottom:.5rem; }
+    .box p { color:var(--text); }
+    .cta-button { background-color:var(--accent); color:var(--background); padding:.75rem 1.5rem; text-decoration:none; font-weight:600; border-radius:5px; transition:all .3s ease; display:inline-block; }
+    .cta-button:hover { background:linear-gradient(90deg,#FF3D00,#FF6B33); transform:scale(1.05); box-shadow:0 4px 12px var(--shadow); }
+    .marquee-banner { background-color:var(--banner); color:var(--background); font-size:.9rem; font-weight:600; height:35px; line-height:35px; position:fixed; top:0; left:0; right:0; z-index:2000; overflow:hidden; white-space:nowrap; }
+    .marquee-banner a { color:var(--background); text-decoration:none; display:inline-block; animation:marquee 20s linear infinite; }
+    .marquee-banner a:hover { animation-play-state:paused; text-decoration:underline; }
+    @keyframes marquee { 0%{transform:translateX(100%)} 100%{transform:translateX(-100%)} }
+    .header-logo { text-align:center; padding:1rem 0; }
+    .logo { max-height:100px; width:auto; }
+    .hero { margin-top:0; }
+    .hero h1 { font-size:2.5rem; color:var(--primary); margin-bottom:1rem; }
+    .hero p { font-size:1.2rem; margin-bottom:1.5rem; }
+    .price-box { display:flex; gap:1rem; align-items:center; justify-content:space-between; margin:1rem 0; padding:1.5rem; text-align:left; transition:transform .3s ease; }
+    .price-box:hover { transform:scale(1.02); }
+    .price-box img { width:120px; height:120px; object-fit:cover; border-radius:5px; border:1px solid var(--shadow); flex-shrink:0; }
+    .price-box div { flex-grow:1; }
+    .price-box strong { color:var(--accent); font-size:1.1rem; }
+    .faq-item { border:1px solid var(--shadow); border-radius:5px; margin-bottom:1rem; overflow:hidden; }
+    .faq-question { background-color:var(--primary); color:var(--background); padding:1rem; cursor:pointer; font-weight:600; display:flex; justify-content:space-between; align-items:center; }
+    .faq-question:hover { background:var(--accent); }
+    .faq-answer { padding:1rem; background-color:rgba(26,60,109,.05); color:var(--text); }
+    footer { background-color:var(--primary); color:var(--background); padding:2rem 1rem; text-align:center; }
+    .footer-content { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:1rem; max-width:1200px; margin:0 auto; }
+    .footer-content a { color:var(--background); text-decoration:none; }
+    .footer-content a:hover { color:var(--accent); }
+    .floating-whatsapp,.floating-scroll-top { position:fixed; bottom:20px; z-index:1000; transition:opacity .3s ease; }
+    .floating-whatsapp { right:20px; background-color:#25D366; color:var(--background); width:50px; height:50px; border-radius:50%; box-shadow:0 4px 12px var(--shadow); display:flex; align-items:center; justify-content:center; text-decoration:none; }
+    .floating-whatsapp i { font-size:1.5rem; }
+    .floating-whatsapp:hover { background-color:#20BD57; transform:scale(1.05); }
+    .floating-scroll-top { left:20px; bottom:20px; background-color:var(--accent); color:var(--background); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 4px 12px var(--shadow); opacity:0; pointer-events:none; }
+    .floating-scroll-top.visible { opacity:1; pointer-events:auto; }
+    .floating-scroll-top:hover { background-color:#FF6B33; transform:scale(1.05); }
+    section { opacity:0; transform:translateY(20px); animation:fadeIn .3s ease forwards; }
+    @keyframes fadeIn { to { opacity:1; transform:translateY(0); } }
+    .hero { animation-delay:.1s; }
+    .system { animation-delay:.2s; }
+    .prices { animation-delay:.3s; }
+    .inventory { animation-delay:.4s; }
+    .testimonials { animation-delay:.5s; }
+    .contact { animation-delay:.6s; }
+    .faq { animation-delay:.7s; }
+    .cta { animation-delay:.8s; }
+    @media (max-width:768px) {
+      .marquee-banner { font-size:.8rem; height:30px; line-height:30px; }
+      body { padding-top:30px; }
+      .header-logo { padding:.5rem 0; }
+      .logo { max-height:40px; }
+      .hero h1 { font-size:1.8rem; }
+      .hero p { font-size:1rem; }
+      .section__title { font-size:1.8rem; }
+      .grid { grid-template-columns:1fr; }
+      .price-box { flex-direction:column; align-items:center; text-align:center; }
+      .price-box img { width:80px; height:80px; }
+      .floating-whatsapp { width:40px; height:40px; }
+      .floating-whatsapp i { font-size:1.2rem; }
+      .floating-scroll-top { width:35px; height:35px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="marquee-banner">
+    <a href="https://wa.me/526624682717?text=Quiero%20aprovechar%20la%20oferta%20del%2010%25%20de%20descuento">
+      ¡Promoción especial! 10% de descuento en todos los kits este mes. Contáctanos por WhatsApp para más detalles.
+    </a>
+  </div>
+
+  <div class="header-logo">
+    <img src="logo.png" alt="Logo Venta y Control" class="logo">
+  </div>
+
+  <main>
+    <section class="section section--light hero">
+      <h1><i class="fas fa-desktop"></i> Punto de Venta y Control de Inventario</h1>
+      <p>Optimiza tus ventas y mantén tu inventario bajo control con nuestros kits de punto de venta listos para usar.</p>
+      <a href="https://wa.me/526624682717" class="cta-button" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">📲 Escríbenos por WhatsApp</a>
+    </section>
+
+    <section class="section system" id="system">
+      <h2 class="section__title">Nuestro Sistema Integral</h2>
+      <div class="grid">
+        <div class="box">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Software Intuitivo</h3>
+          <p>Fácil de usar, ideal para cualquier tipo de negocio, desde tiendas hasta restaurantes.</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-plug"></i>
+          <h3>Integración Total</h3>
+          <p>Conecta básculas, impresoras, lectores y más, todo funcionando en armonía.</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-headset"></i>
+          <h3>Soporte y Escalabilidad</h3>
+          <p>Atención por WhatsApp y un sistema que crece con tu negocio.</p>
+        </div>
+      </div>
+      <img src="TU_URL_EQUIPO_INSTALADO.jpg" alt="Equipo Instalado Venta y Control" loading="lazy" style="max-width:100%;border-radius:8px;margin-top:2rem;box-shadow:0 4px 12px var(--shadow);">
+      <a href="https://wa.me/526624682717" class="cta-button" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">Conoce más sobre nuestro sistema</a>
+    </section>
+
+    <section class="section section--light prices section--highlight" id="prices">
+      <h2 class="section__title">Kits y Precios</h2>
+      <article class="box price-box">
+        <img src="TU_URL_KIT_BASICO.jpg" alt="Kit Básico de Punto de Venta" loading="lazy">
+        <div>
+          <strong>Kit Básico – <span style="color:var(--accent);">$5,200 MXN</span></strong><br>
+          Computadora, impresora 58mm, lector, cajón, instalación y Eleventa.
+        </div>
+      </article>
+      <article class="box price-box">
+        <img src="TU_URL_KIT_ABARROTES.jpg" alt="Kit Abarrotes con Báscula" loading="lazy">
+        <div>
+          <strong>Kit Abarrotes + Báscula – <span style="color:var(--accent);">$6,900 MXN</span></strong><br>
+          Kit básico + Báscula conectada (+$1,700).
+        </div>
+      </article>
+      <article class="box price-box">
+        <img src="TU_URL_KIT_RESTAURANTES.jpg" alt="Kit para Restaurantes" loading="lazy">
+        <div>
+          <strong>Kit Restaurantes – <span style="color:var(--accent);">$6,500 MXN</span></strong><br>
+          Todo lo necesario para restaurantes con software especial.
+        </div>
+      </article>
+      <article class="box price-box">
+        <img src="TU_URL_KIT_COMANDA.jpg" alt="Kit Restaurantes con Comanda" loading="lazy">
+        <div>
+          <strong>Kit Restaurantes + Comanda – <span style="color:var(--accent);">$8,000 MXN</span></strong><br>
+          Agrega impresora adicional para cocina/bar (58mm).
+        </div>
+      </article>
+      <article class="box price-box">
+        <img src="TU_URL_ARTICULOS.jpg" alt="Artículos por separado" loading="lazy">
+        <div>
+          <strong>Artículos por separado – <span style="color:var(--accent);">Consulta precio</span></strong><br>
+          Solo lo que necesites: impresora de tickets, cajón de dinero, lector de código de barras, báscula, monitor touch, computadoras…<br>
+          ¿Buscas algo específico? Pregúntanos.
+        </div>
+      </article>
+    </section>
+
+    <section class="section inventory" id="inventory">
+      <h2 class="section__title">Controla tu Inventario como Profesional</h2>
+      <div class="grid">
+        <div class="box">
+          <i class="fas fa-chart-line"></i>
+          <h3>Seguimiento en Tiempo Real</h3>
+          <p>Monitorea tus ventas e inventario al instante, sin complicaciones.</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-boxes"></i>
+          <h3>Gestión de Productos</h3>
+          <p>Vende por unidad, peso o combos, y organiza tu catálogo fácilmente.</p>
+        </div>
+        <div class="box">
+          <i class="fas fa-file-alt"></i>
+          <h3>Reportes Detallados</h3>
+          <p>Genera reportes de ventas, cortes de caja y existencias con un clic.</p>
+        </div>
+      </div>
+      <a href="https://wa.me/526624682717" class="cta-button" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">Descubre cómo optimizar tu inventario</a>
+    </section>
+
+    <section class="section section--light testimonials" id="testimonials">
+      <h2 class="section__title">Lo que dicen nuestros clientes</h2>
+      <div class="grid">
+        <div class="box">
+          <p>"El sistema de Venta y Control transformó mi tienda de abarrotes. Ahora controlo mi inventario fácilmente."</p>
+          <small>– Juan Pérez, Tienda La Esquina</small>
+        </div>
+        <div class="box">
+          <p>"La instalación fue rapidísima y el soporte por WhatsApp es excelente. ¡Lo recomiendo!"</p>
+          <small>– María García, Restaurante El Sabor</small>
+        </div>
+        <div class="box">
+          <p>"Un sistema muy confiable, perfecto para mi cafetería. ¡Gracias por el soporte!"</p>
+          <small>– Luis Ramírez, Café Aroma</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2 class="section__title">Contáctanos</h2>
+      <p>Contáctanos directamente por <a href="https://wa.me/526624682717" class="cta-button" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">WhatsApp</a></p>
+    </section>
+
+    <section class="section section--light faq" id="faq">
+      <h2 class="section__title">Preguntas Frecuentes</h2>
+      <details class="faq-item">
+        <summary class="faq-question">¿Me sirve si tengo una tienda, papelería o restaurante? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí, funciona en abarrotes, papelerías, ferreterías, estéticas, farmacias, cafeterías, restaurantes y más.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Qué necesito para instalarlo? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Solo una computadora con Windows. Nosotros llevamos el equipo necesario y lo dejamos funcionando.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Incluye capacitación y soporte? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí, te enseñamos a usarlo y damos soporte por WhatsApp después de la instalación.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Cuánto tiempo tardan en instalarlo? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Entre 1 y 2 horas, dependiendo del giro del negocio y los equipos incluidos.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Qué beneficios ofrece el sistema? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Control de ventas, inventario, descuentos, cortes de caja, reportes, combos y más.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Funciona con báscula para abarrotes? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí, puedes conectar una báscula para ventas por peso y manejar varias cajas si lo necesitas.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Funciona bien en restaurantes? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí. Se pueden configurar comandas por área, impresoras para cocina o barra, y usar pantalla touch.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Es compatible con monitores touch? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí, el sistema funciona sin problemas con pantallas táctiles.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Este sistema permite facturar? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">No. El sistema está enfocado en control de ventas e inventario, pero no genera facturas fiscales.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Puedo vender por peso o hacer combos? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Sí. Puedes vender por kilo, por unidad o crear paquetes promocionales.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Necesita internet para funcionar? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">No. Todo opera localmente. El internet es opcional para respaldos o reportes en línea.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Se pierde la información si se apaga la computadora? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">No, los datos quedan guardados. Además, puedes hacer respaldos periódicos.</div>
+      </details>
+      <details class="faq-item">
+        <summary class="faq-question">¿Qué pasa si hay problemas después? <i class="fas fa-chevron-down"></i></summary>
+        <div class="faq-answer">Tienes soporte por WhatsApp y servicio de mantenimiento con precio especial para clientes.</div>
+      </details>
+    </section>
+
+    <section class="section cta">
+      <h2 class="section__title">¿Listo para optimizar tu negocio?</h2>
+      <p>📩 Cotiza sin compromiso. Te atendemos por WhatsApp.</p>
+      <a href="https://wa.me/526624682717" class="cta-button" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">Escríbenos ahora</a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div>
+        <h3>Venta y Control</h3>
+        <p>Soluciones de punto de venta y control de inventario para tu negocio.</p>
+      </div>
+      <div>
+        <h3>Contacto</h3>
+        <p><i class="fas fa-phone"></i> +52 662 468 2717</p>
+        <p><i class="fas fa-envelope"></i> info@tudominio.com</p>
+      </div>
+      <div>
+        <h3>Síguenos</h3>
+        <p>
+          <a href="https://wa.me/526624682717" aria-label="Contactar por WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> WhatsApp</a> | 
+          <a href="TU_FACEBOOK_URL"><i class="fab fa-facebook"></i> Facebook</a>
+        </p>
+      </div>
+    </div>
+    <p style="margin-top:1rem;">© 2025 Venta y Control. Todos los derechos reservados.</p>
+  </footer>
+
+  <a href="https://wa.me/526624682717" class="floating-whatsapp" aria-label="Contactar por WhatsApp" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <button class="floating-scroll-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script>
+    // Botón "Volver arriba"
+    const scrollTopButton = document.querySelector('.floating-scroll-top');
+    window.addEventListener('scroll', () => {
+      scrollTopButton.classList.toggle('visible', window.pageYOffset > 300);
+    });
+    scrollTopButton.addEventListener('click', () => window.scrollTo({ top:0, behavior:'smooth' }));
+
+    // Manejo de FAQ
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.addEventListener('toggle', () => {
+        const icon = item.querySelector('.faq-question i');
+        icon.classList.toggle('fa-chevron-down', !item.open);
+        icon.classList.toggle('fa-chevron-up', item.open);
+      });
+    });
+  </script>
+</body>
+</html>
